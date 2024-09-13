@@ -1,0 +1,524 @@
+@use "mediaQuery" as *;
+$back: #baa8a2;
+$wback: #ffffff;
+$stitle: #baa8a2;
+
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  border: 0;
+}
+
+/* ------------------------------ */
+/* トップ部分 */
+/* ------------------------------ */
+
+.top-kv {
+  .top-kv-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include min(md) {
+    .top-message-container {
+      position: relative;
+      left: 40px;
+      top: 156px;
+    }
+  }
+
+  .top-message {
+    color: #333333;
+    width: 175px;
+    height: 156px;
+    display: inline-block;
+    margin: 16px 0 16px 5%;
+  }
+
+  @include min(md) {
+    .top-message {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      margin-top: 0;
+    }
+  }
+
+  .top-message p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 2.16;
+    letter-spacing: 0.2em;
+  }
+
+  @include min(md) {
+    .top-message p {
+      font-size: 40px;
+      line-height: 2.4;
+    }
+  }
+
+  .top-button {
+    background-color: $back;
+    width: 260px;
+    height: 55px;
+    margin-left: 5%;
+    text-align: center;
+  }
+
+  @include min(md) {
+    .top-button {
+      width: 360px;
+      margin-top: 96px;
+      margin-left: 0;
+    }
+  }
+
+  .top-button a {
+    text-decoration: none;
+  }
+
+  .top-button:hover {
+    opacity: 0.5;
+  }
+
+  .top-button-view {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 19.5px;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: $wback;
+  }
+}
+
+@include min(md) {
+  .top-kv {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+  }
+}
+
+/* ------------------------------ */
+/* FEATURE部分 */
+/* ------------------------------ */
+
+.top-article {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 96px;
+
+  .features {
+    margin: 96px auto 0;
+    text-align: center;
+  }
+
+  .feature {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+    text-shadow: 1px 4px 2px #dcdcdc;
+  }
+
+  @include min(md) {
+    .feature {
+      font-size: 32px;
+      letter-spacing: 0.8rem;
+      text-shadow: 0px 0px 0px;
+    }
+  }
+  .feature-coco {
+    font-family: "Noto Serif JP";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08rem;
+    padding: 16px 0 48px 0;
+  }
+
+  @include min(md) {
+    .feature-coco {
+      font-size: 18px;
+      padding: 20px 0 80px 0;
+    }
+  }
+
+  .oil-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @include min(md) {
+    .oil-container {
+      gap: 80px 60px;
+    }
+  }
+
+  .top-oil-img {
+    margin: 0 auto;
+  }
+
+  @include min(md) {
+    .top-oil-img {
+      width: calc((100% / 2) - (60px * 1 / 2));
+    }
+  }
+
+  @include min(md) {
+    .top-oil-img:not(:nth-child(1), :nth-child(2)) {
+      width: calc((100% / 3) - (60px * 2 / 3));
+    }
+  }
+
+  .top-coconut-img-pic img {
+    width: 100%;
+    height: auto;
+  }
+
+  @include min(md) {
+    .top-coconut-img-pic img {
+      max-width: 540px;
+    }
+  }
+
+  .top-oil-img img {
+    width: 100%;
+  }
+
+  .top-sub-title {
+    font-size: 14px;
+    line-height: 1.75;
+    letter-spacing: 0.12em;
+    color: $stitle;
+    margin: 16px 0 4px;
+  }
+
+  @include min(md) {
+    .top-sub-title {
+      font-size: 16px;
+    }
+  }
+
+  .top-oil-name {
+    font-size: 18px;
+    line-height: 1.77;
+    letter-spacing: 0.08em;
+    color: #333333;
+    margin-bottom: 12px;
+  }
+
+  @include min(md) {
+    .top-oil-name {
+      font-size: clamp(17px, 1.46vw, 20px);
+      line-height: 1.75;
+    }
+  }
+
+  .top-oil-text {
+    font-size: 14px;
+    line-height: 1.79;
+    letter-spacing: 0.08em;
+    color: #5d5d5d;
+  }
+
+  @include min(md) {
+    .top-oil-text {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+  }
+}
+
+@include min(md) {
+  .top-article {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+
+/* ------------------------------ */
+/* lineup部分 */
+/* ------------------------------ */
+
+.lineup-allimg-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.lineup-article {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 96px;
+
+  .lineup-title {
+    margin: 96px auto 48px;
+    text-align: center;
+  }
+
+  @include min(md) {
+    .lineup-title {
+      margin: 160px auto 80px;
+    }
+  }
+
+  .lineup-title1 {
+    color: "#333333";
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+  }
+
+  @include min(md) {
+    .lineup-title1 {
+      font-size: 32px;
+    }
+  }
+
+  .lineup-title2 {
+    font-family: "Noto Serif JP";
+    color: "#333333";
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    padding-top: 16px;
+  }
+
+  @include min(md) {
+    .lineup-title2 {
+      font-size: 18px;
+      padding-top: 20px;
+    }
+  }
+
+  .lineup-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 48px;
+  }
+
+  @include min(md) {
+    .lineup-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 80px;
+    }
+  }
+  .lineup-list {
+    text-align: center;
+  }
+
+  .lineup-list-pic img {
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+  }
+
+  .lineup-list-pic:hover img {
+    transform: scale(1.05);
+  }
+
+  .lineup-list-title {
+    font-family: "Noto Serif JP";
+    color: #333333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.75;
+    letter-spacing: 0.08em;
+    padding: 16px 0 16px 0;
+  }
+
+  @include min(md) {
+    .lineup-list-title {
+      font-size: 20px;
+    }
+  }
+
+  .lineup-list-text {
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.78;
+    letter-spacing: 0.08em;
+  }
+
+  @include min(md) {
+    .lineup-list-text {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+  }
+
+  .top-button {
+    background-color: $back;
+    width: 260px;
+    height: 55px;
+    margin: 16px auto 0;
+    text-align: center;
+  }
+
+  @include min(md) {
+    .top-button {
+      width: 26.35vw;
+      max-width: 324px;
+    }
+  }
+
+  .top-button:hover {
+    opacity: 0.5;
+  }
+
+  .top-button a {
+    text-decoration: none;
+  }
+
+  .top-button-view {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 19.5px;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    color: $wback;
+  }
+}
+
+@include min(md) {
+  .lineup-article {
+    padding-bottom: 160px;
+  }
+}
+
+/* ------------------------------ */
+/* INSTAGRAM部分 */
+/* ------------------------------ */
+
+.insta-img img {
+  width: 100%;
+  height: auto;
+}
+
+.insta-article {
+  margin: 0 5%;
+  padding: 96px 0;
+
+  .insta-title {
+    text-align: center;
+  }
+
+  .insta-title1 {
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+    margin-bottom: 16px;
+  }
+
+  @include min(md) {
+    .insta-title1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .insta-title2 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    margin-bottom: 48px;
+  }
+
+  @include min(md) {
+    .insta-title2 {
+      font-size: 18px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .insta-img-posts {
+    display: flex;
+    gap: 9px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  @include min(md) {
+    .insta-img-posts {
+      gap: 24px;
+    }
+  }
+
+  .insta-img-link img{
+    transition: 0.3s;
+  }
+
+  .insta-img-link:hover img {
+    transform: scale(0.95);
+  }
+
+  .insta-img-posts img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 48px;
+  }
+
+  .insta-button {
+    background-color: $back;
+    width: 260px;
+    height: 55px;
+    margin: 16px auto 0;
+    text-align: center;
+  }
+
+  .insta-button:hover {
+    opacity: 0.5;
+  }
+
+  .insta-button a {
+    text-decoration: none;
+  }
+
+  .insta-button-view {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding-top: 19.5px;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.1rem;
+    color: $wback;
+  }
+}
+
+@include min(md) {
+  .insta-article {
+    width: 80%;
+    margin: 0 10%;
+  }
+}

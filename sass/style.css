@@ -1,0 +1,1377 @@
+@charset "UTF-8";
+/* resset.dev 窶｢ v5.0.2 */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+  word-break: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0; /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+     # General elements
+     # ================================================================= */
+hr {
+  overflow: visible; /* Show the overflow in Edge and IE */
+  height: 0; /* Add the correct box sizing in Firefox */
+  color: inherit; /* Correct border color in Firefox. */
+}
+
+details,
+main {
+  display: block; /* Render the `main` element consistently in IE. */
+}
+
+summary {
+  display: list-item; /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+
+[hidden] {
+  display: none; /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: none; /* Remove the bottom border in Chrome 57 */
+  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+a {
+  background-color: transparent; /* Remove the gray background on active links in IE 10 */
+}
+
+a:active,
+a:hover {
+  outline-width: 0; /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace; /* Specify the font family of code elements */
+}
+
+pre {
+  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+}
+
+b,
+strong {
+  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+table {
+  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
+  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
+}
+
+iframe {
+  border-style: none;
+}
+
+/* # =================================================================
+     # Forms
+     # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
+}
+
+[type=search] {
+  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px; /* Correct the outline style in Safari */
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+}
+
+textarea {
+  overflow: auto; /* Internet Explorer 11+ */
+  resize: vertical; /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit; /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold; /* Restore the font weight unset by the previous rule */
+}
+
+button {
+  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+button,
+select {
+  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type=button],
+[type=reset],
+[type=submit],
+[role=button] {
+  cursor: pointer;
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline-width: 0;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none; /* Firefox 36+ */
+  -webkit-appearance: none; /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none; /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor; /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge and IE */
+  white-space: normal; /* Correct the text wrapping in Edge and IE */
+  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+}
+
+::-webkit-file-upload-button {
+  /* Correct the inability to style clickable types in iOS and Safari */
+  -webkit-appearance: button;
+  color: inherit;
+  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+     # Specify media element style
+     # ================================================================= */
+img {
+  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+/* # =================================================================
+     # Accessibility
+     # ================================================================= */
+/* Specify the progress cursor of updating elements */
+[aria-busy=true] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled=true] {
+  cursor: default;
+}
+
+.header {
+  height: 60px;
+  width: 100%;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+.header .logo-sp {
+  margin: 21.44px 0 21.44px 19.01px;
+}
+.header .logo-sp svg {
+  height: 17.12px;
+  width: 70px;
+}
+.header .icon-cart {
+  margin: 18.32px 19.01px 18.32px 0;
+}
+.header .icon-cart svg {
+  height: 23.99px;
+  width: 23.36px;
+}
+.header .icon-cart :hover {
+  opacity: 0.5;
+}
+
+@media (width >= 768px) {
+  .header {
+    height: 80px;
+    width: auto;
+  }
+  .header .logo-sp {
+    margin: 29.6px 0 29.6px 32px;
+  }
+  .header .logo-sp svg {
+    height: 20.8px;
+    width: 80px;
+  }
+  .header .icon-cart {
+    margin: 27.35px 32px 27.35px 0;
+  }
+  .header .icon-cart svg {
+    height: 25.99px;
+    width: 25.3px;
+  }
+}
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  border: 0;
+}
+
+.c-main {
+  width: 100%;
+  text-align: center;
+}
+.c-main .c-title-level2 {
+  display: inline-block;
+  margin: 47px auto 0;
+}
+.c-main .c-title-level2 a {
+  text-decoration: none;
+}
+.c-main .c-button:hover {
+  opacity: 0.5;
+}
+.c-main .c-en {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.4rem;
+  color: #333333;
+}
+@media (width >= 768px) {
+  .c-main .c-en {
+    font-size: 32px;
+  }
+}
+.c-main .c-ja {
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.08rem;
+  color: #333333;
+  padding-top: 16px;
+}
+@media (width >= 768px) {
+  .c-main .c-ja {
+    font-size: 18px;
+  }
+}
+.c-main .c-button {
+  background-color: #baa8a2;
+  width: 260px;
+  height: 55px;
+  margin: 47px auto 47px;
+}
+@media (width >= 768px) {
+  .c-main .c-button {
+    width: 324px;
+    margin: 86px auto 86px;
+  }
+}
+.c-main .c-button-link {
+  text-decoration: none;
+}
+.c-main .c-button a:hover {
+  opacity: 0.5;
+}
+.c-main .c-view {
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  padding-top: 19.5px;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .c-main .c-view {
+    font-size: 18px;
+  }
+}
+
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  border: 0;
+}
+
+/* ------------------------------ */
+/* トップ部分 */
+/* ------------------------------ */
+.top-kv .top-kv-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+@media (width >= 768px) {
+  .top-kv .top-message-container {
+    position: relative;
+    left: 40px;
+    top: 156px;
+  }
+}
+.top-kv .top-message {
+  color: #333333;
+  width: 175px;
+  height: 156px;
+  display: inline-block;
+  margin: 16px 0 16px 5%;
+}
+@media (width >= 768px) {
+  .top-kv .top-message {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+}
+.top-kv .top-message p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 2.16;
+  letter-spacing: 0.2em;
+}
+@media (width >= 768px) {
+  .top-kv .top-message p {
+    font-size: 40px;
+    line-height: 2.4;
+  }
+}
+.top-kv .top-button {
+  background-color: #baa8a2;
+  width: 260px;
+  height: 55px;
+  margin-left: 5%;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .top-kv .top-button {
+    width: 360px;
+    margin-top: 96px;
+    margin-left: 0;
+  }
+}
+.top-kv .top-button a {
+  text-decoration: none;
+}
+.top-kv .top-button:hover {
+  opacity: 0.5;
+}
+.top-kv .top-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+@media (width >= 768px) {
+  .top-kv {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+  }
+}
+/* ------------------------------ */
+/* FEATURE部分 */
+/* ------------------------------ */
+.top-article {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 96px;
+}
+.top-article .features {
+  margin: 96px auto 0;
+  text-align: center;
+}
+.top-article .feature {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+  text-shadow: 1px 4px 2px #dcdcdc;
+}
+@media (width >= 768px) {
+  .top-article .feature {
+    font-size: 32px;
+    letter-spacing: 0.8rem;
+    text-shadow: 0px 0px 0px;
+  }
+}
+.top-article .feature-coco {
+  font-family: "Noto Serif JP";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08rem;
+  padding: 16px 0 48px 0;
+}
+@media (width >= 768px) {
+  .top-article .feature-coco {
+    font-size: 18px;
+    padding: 20px 0 80px 0;
+  }
+}
+.top-article .oil-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  align-items: center;
+}
+@media (width >= 768px) {
+  .top-article .oil-container {
+    gap: 80px 60px;
+  }
+}
+.top-article .top-oil-img {
+  margin: 0 auto;
+}
+@media (width >= 768px) {
+  .top-article .top-oil-img {
+    width: calc(50% - 30px);
+  }
+}
+@media (width >= 768px) {
+  .top-article .top-oil-img:not(:nth-child(1), :nth-child(2)) {
+    width: calc(33.3333333333% - 40px);
+  }
+}
+.top-article .top-coconut-img-pic img {
+  width: 100%;
+  height: auto;
+}
+@media (width >= 768px) {
+  .top-article .top-coconut-img-pic img {
+    max-width: 540px;
+  }
+}
+.top-article .top-oil-img img {
+  width: 100%;
+}
+.top-article .top-sub-title {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.12em;
+  color: #baa8a2;
+  margin: 16px 0 4px;
+}
+@media (width >= 768px) {
+  .top-article .top-sub-title {
+    font-size: 16px;
+  }
+}
+.top-article .top-oil-name {
+  font-size: 18px;
+  line-height: 1.77;
+  letter-spacing: 0.08em;
+  color: #333333;
+  margin-bottom: 12px;
+}
+@media (width >= 768px) {
+  .top-article .top-oil-name {
+    font-size: clamp(17px, 1.46vw, 20px);
+    line-height: 1.75;
+  }
+}
+.top-article .top-oil-text {
+  font-size: 14px;
+  line-height: 1.79;
+  letter-spacing: 0.08em;
+  color: #5d5d5d;
+}
+@media (width >= 768px) {
+  .top-article .top-oil-text {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+@media (width >= 768px) {
+  .top-article {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+/* ------------------------------ */
+/* lineup部分 */
+/* ------------------------------ */
+.lineup-allimg-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.lineup-article {
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding-bottom: 96px;
+}
+.lineup-article .lineup-title {
+  margin: 96px auto 48px;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-title {
+    margin: 160px auto 80px;
+  }
+}
+.lineup-article .lineup-title1 {
+  color: "#333333";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-title1 {
+    font-size: 32px;
+  }
+}
+.lineup-article .lineup-title2 {
+  font-family: "Noto Serif JP";
+  color: "#333333";
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  padding-top: 16px;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-title2 {
+    font-size: 18px;
+    padding-top: 20px;
+  }
+}
+.lineup-article .lineup-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 48px;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+  }
+}
+.lineup-article .lineup-list {
+  text-align: center;
+}
+.lineup-article .lineup-list-pic img {
+  width: 100%;
+  height: auto;
+  transition: 0.3s;
+}
+.lineup-article .lineup-list-pic:hover img {
+  transform: scale(1.05);
+}
+.lineup-article .lineup-list-title {
+  font-family: "Noto Serif JP";
+  color: #333333;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+  padding: 16px 0 16px 0;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-list-title {
+    font-size: 20px;
+  }
+}
+.lineup-article .lineup-list-text {
+  color: #5d5d5d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.78;
+  letter-spacing: 0.08em;
+}
+@media (width >= 768px) {
+  .lineup-article .lineup-list-text {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+.lineup-article .top-button {
+  background-color: #baa8a2;
+  width: 260px;
+  height: 55px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .lineup-article .top-button {
+    width: 26.35vw;
+    max-width: 324px;
+  }
+}
+.lineup-article .top-button:hover {
+  opacity: 0.5;
+}
+.lineup-article .top-button a {
+  text-decoration: none;
+}
+.lineup-article .top-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+
+@media (width >= 768px) {
+  .lineup-article {
+    padding-bottom: 160px;
+  }
+}
+/* ------------------------------ */
+/* INSTAGRAM部分 */
+/* ------------------------------ */
+.insta-img img {
+  width: 100%;
+  height: auto;
+}
+
+.insta-article {
+  margin: 0 5%;
+  padding: 96px 0;
+}
+.insta-article .insta-title {
+  text-align: center;
+}
+.insta-article .insta-title1 {
+  color: #333333;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+  margin-bottom: 16px;
+}
+@media (width >= 768px) {
+  .insta-article .insta-title1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+}
+.insta-article .insta-title2 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  margin-bottom: 48px;
+}
+@media (width >= 768px) {
+  .insta-article .insta-title2 {
+    font-size: 18px;
+    margin-bottom: 80px;
+  }
+}
+.insta-article .insta-img-posts {
+  display: flex;
+  gap: 9px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+@media (width >= 768px) {
+  .insta-article .insta-img-posts {
+    gap: 24px;
+  }
+}
+.insta-article .insta-img-link img {
+  transition: 0.3s;
+}
+.insta-article .insta-img-link:hover img {
+  transform: scale(0.95);
+}
+.insta-article .insta-img-posts img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 48px;
+}
+.insta-article .insta-button {
+  background-color: #baa8a2;
+  width: 260px;
+  height: 55px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+.insta-article .insta-button:hover {
+  opacity: 0.5;
+}
+.insta-article .insta-button a {
+  text-decoration: none;
+}
+.insta-article .insta-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+
+@media (width >= 768px) {
+  .insta-article {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+/* ------------------------------ */
+/* トップ部分 */
+/* ------------------------------ */
+.pro-img-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.pro-shampoo {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  width: 90%;
+  height: auto;
+  margin: 0 5%;
+  padding: 96px 0;
+}
+.pro-shampoo .pro-shampoo-container {
+  width: 100%;
+  height: auto;
+}
+.pro-shampoo .pro-shampoo-img-pic img {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.pro-shampoo .pro-shampoo-img-pic:hover img {
+  transform: scale(1.05);
+}
+@media (width >= 768px) {
+  .pro-shampoo .pro-shampoo-img-pic img {
+    width: 29.13vw;
+    height: 100%;
+  }
+}
+.pro-shampoo .pro-shampoo-title {
+  font-family: "Noto Serif JP";
+  color: #333333;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.72;
+  letter-spacing: 0.08em;
+  padding-bottom: 16px;
+}
+@media (width >= 768px) {
+  .pro-shampoo .pro-shampoo-title {
+    font-size: 26px;
+    line-height: 1.73;
+    padding-bottom: 24px;
+  }
+}
+.pro-shampoo .pro-shampoo-text {
+  color: #5d5d5d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.78;
+  letter-spacing: 0.08em;
+}
+@media (width >= 768px) {
+  .pro-shampoo .pro-shampoo-text {
+    font-size: clamp(10px, 1.17vw, 16px);
+    line-height: 1.75;
+    max-width: 386px;
+  }
+}
+.pro-shampoo .pro-shampoo-button {
+  background-color: #baa8a2;
+  width: 72.22vw;
+  max-width: 260px;
+  height: 55px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .pro-shampoo .pro-shampoo-button {
+    background-color: #baa8a2;
+    width: 72.22vw;
+    max-width: 260px;
+    height: 55px;
+    margin: 16px 0 0;
+  }
+}
+.pro-shampoo .pro-shampoo-button:hover {
+  opacity: 0.5;
+}
+.pro-shampoo .pro-shampoo-button a {
+  text-decoration: none;
+}
+.pro-shampoo .pro-shampoo-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.08rem;
+  color: #ffffff;
+}
+
+@media (width >= 768px) {
+  .pro-shampoo {
+    width: 65%;
+    flex-flow: row;
+    margin: 0 17.5%;
+    gap: 80px;
+    padding: 160px 0;
+  }
+}
+/* ------------------------------ */
+/* 関連商品部分 */
+/* ------------------------------ */
+.related {
+  width: 100%;
+  height: 100%;
+  padding: 96px 0;
+  background-color: rgba(186, 168, 162, 0.15);
+}
+.related .related-titles {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 164px;
+  height: 94px;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .related .related-titles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 510px;
+    height: 70px;
+  }
+}
+.related .related-title1 {
+  color: #333333;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.4em;
+}
+@media (width >= 768px) {
+  .related .related-title1 {
+    width: 100%;
+  }
+}
+.related .related-title2 {
+  color: #333333;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.related .related-container {
+  width: 90%;
+  height: auto;
+  margin: 48px 5% 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+@media (width >= 768px) {
+  .related .related-container {
+    width: 80%;
+    height: auto;
+    margin: 80px 10% 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 80px;
+  }
+}
+.related .related-list-1,
+.related .related-list-2,
+.related .related-list-3 {
+  text-align: center;
+}
+@media (width >= 768px) {
+  .related .related-list-1,
+.related .related-list-2,
+.related .related-list-3 {
+    width: calc(33.3333333333% - 53.3333333333px);
+  }
+}
+.related .related-list-1 img,
+.related .related-list-2 img,
+.related .related-list-3 img {
+  width: 90vw;
+  transition: 0.3s;
+}
+.related .related-list-link1:hover img,
+.related .related-list-link2:hover img,
+.related .related-list-link3:hover img {
+  transform: scale(1.05);
+}
+@media (width >= 768px) {
+  .related .related-list-1 img,
+.related .related-list-2 img,
+.related .related-list-3 img {
+    width: 100%;
+  }
+}
+@media (width >= 768px) {
+  .related .related-list-1 {
+    order: 1;
+  }
+}
+@media (width >= 768px) {
+  .related .related-list-3 {
+    order: 2;
+  }
+}
+.related .related-name {
+  font-family: "Noto Serif JP";
+  color: #333333;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+  padding-top: 16px;
+}
+@media (width >= 768px) {
+  .related .related-name {
+    font-size: 20px;
+  }
+}
+.related .related-text {
+  font-family: "Noto Serif JP";
+  color: #5d5d5d;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.78;
+  letter-spacing: 0.08em;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+@media (width >= 768px) {
+  .related .related-text {
+    font-size: clamp(14px, 1.17vw, 16px);
+    line-height: 1.75;
+    width: 100%;
+  }
+}
+.related .related-button {
+  background-color: #baa8a2;
+  width: 80%;
+  max-width: 260px;
+  height: 55px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+@media (width >= 768px) {
+  .related .related-button {
+    width: 90%;
+  }
+}
+.related .related-button:hover {
+  opacity: 0.5;
+}
+.related .related-button a {
+  text-decoration: none;
+}
+.related .related-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: clamp(12px, 4.44vw, 16px);
+  line-height: 1;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .related .related-button-view {
+    font-size: clamp(14px, 1.32vw, 18px);
+  }
+}
+
+@media (width >= 768px) {
+  .related {
+    padding: 160px 0;
+  }
+}
+.error-img-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.error-container {
+  padding: 96px 0;
+  width: 90%;
+  margin: 0 5%;
+}
+.error-container .error-inner {
+  text-align: center;
+}
+@media (width >= 768px) {
+  .error-container .error-inner {
+    max-width: 525px;
+    margin: 0 auto;
+  }
+}
+.error-container .error-title {
+  color: #333333;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.4rem;
+  margin-bottom: 16px;
+}
+@media (width >= 768px) {
+  .error-container .error-title {
+    font-size: 36px;
+    letter-spacing: 0.8rem;
+  }
+}
+.error-container .error-text1 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: 0.08rem;
+  margin-bottom: 40px;
+}
+@media (width >= 768px) {
+  .error-container .error-text1 {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+}
+.error-container .error-text2 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: 0.08rem;
+  margin-bottom: 40px;
+}
+@media (width >= 768px) {
+  .error-container .error-text2 {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+@media (width >= 768px) {
+  .error-container .error-text2 span {
+    display: inline-block;
+  }
+}
+.error-container .error-button {
+  background-color: #baa8a2;
+  width: 80%;
+  max-width: 260px;
+  height: 55px;
+  margin: 0 auto;
+}
+@media (width >= 768px) {
+  .error-container .error-button {
+    max-width: 324px;
+  }
+}
+.error-container .error-button:hover {
+  opacity: 0.5;
+}
+.error-container .error-button a {
+  text-decoration: none;
+}
+.error-container .error-button-view {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 19.5px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+@media (width >= 768px) {
+  .error-container {
+    padding: 160px 0;
+    width: 68%;
+    margin: 0 16%;
+  }
+}
+.footer {
+  width: 100%;
+  background-color: #baa8a2;
+  padding: 40px 0 20px 0;
+}
+.footer .footer-inner {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+@media (width >= 768px) {
+  .footer .footer-inner {
+    max-width: 1080px;
+  }
+}
+.footer .footer-logo {
+  width: 84px;
+  height: 20.01px;
+  margin: 0 auto 28px;
+}
+@media (width >= 768px) {
+  .footer .footer-logo {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+.footer .footer-logo svg {
+  fill: #ffffff;
+}
+.footer .footer-nav {
+  list-style: none;
+  width: 263px;
+  height: 36px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+@media (width >= 768px) {
+  .footer .footer-nav {
+    width: auto;
+    height: auto;
+    margin: 0 auto 40px;
+  }
+}
+.footer .footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 12px;
+  letter-spacing: 0.05rem;
+}
+.footer .footer-info1 a {
+  padding-right: 16px;
+  text-decoration: none;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .footer .footer-info1 a {
+    padding-right: 24px;
+  }
+}
+.footer .footer-info1 a:hover {
+  opacity: 0.5;
+}
+.footer .footer-info2 a {
+  padding-right: 16px;
+  text-decoration: none;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .footer .footer-info2 a {
+    padding-right: 24px;
+  }
+}
+.footer .footer-info2 a:hover {
+  opacity: 0.5;
+}
+.footer .footer-info3 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .footer .footer-info3 a {
+    padding-right: 24px;
+  }
+}
+.footer .footer-info3 a:hover {
+  opacity: 0.5;
+}
+.footer .footer-info4 a {
+  margin: 12px 16px 0px 53px;
+  text-decoration: none;
+  color: #ffffff;
+}
+@media (width >= 768px) {
+  .footer .footer-info4 a {
+    padding-right: 24px;
+    margin: 0;
+  }
+}
+.footer .footer-info4 a:hover {
+  opacity: 0.5;
+}
+.footer .footer-info5 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer .footer-info5 a:hover {
+  opacity: 0.5;
+}
+.footer .footer-border {
+  border-top: 1px solid;
+  border-color: #eeeeee;
+  margin-bottom: 20px;
+}
+@media (width >= 768px) {
+  .footer .footer-border {
+    margin-bottom: 24px;
+  }
+}
+.footer .footer-small {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  color: #eeeeee;
+}
+
+/* ------------------------------ */
+/* 全体共通のスタイル */
+/* ------------------------------ */
+body {
+  font-family: "Lato", "Noto Serif JP", sans-serif, serif;
+}
+/*# sourceMappingURL=style.css.map */
